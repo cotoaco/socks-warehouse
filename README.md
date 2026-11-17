@@ -1,5 +1,5 @@
 # Socks Warehouse
-
+Ссылка на задание: https://github.com/Hexlet/ru-test-assignments/blob/main/java/raiffeisen/cib-interns-test-task.md
 Простое REST API приложение для учёта носков на складе.
 
 ## Технологии
