@@ -14,21 +14,21 @@ public class SocksController {
 
     @PostMapping("/income")
     public String income(@RequestBody SocksRequest request) {
-        service.income(
-                request.color,
-                request.cottonPart,
-                request.quantity
-        );
+        if (request.quantity <= 0 || request.cottonPart < 0 || request.cottonPart > 100) {
+            throw new IllegalArgumentException("Некорректные данные");
+        }
+
+        service.income(request.color, request.cottonPart, request.quantity);
         return "Носки добавлены";
     }
 
     @PostMapping("/outcome")
     public String outcome(@RequestBody SocksRequest request) {
-        service.outcome(
-                request.color,
-                request.cottonPart,
-                request.quantity
-        );
+        if (request.quantity <= 0 || request.cottonPart < 0 || request.cottonPart > 100) {
+            throw new IllegalArgumentException("Некорректные данные");
+        }
+
+        service.outcome(request.color, request.cottonPart, request.quantity);
         return "Носки выданы";
     }
 
